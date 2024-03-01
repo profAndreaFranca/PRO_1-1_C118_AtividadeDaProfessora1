@@ -14,7 +14,7 @@ emo_code_url = {
     "worry": [4, "./static/assets/emoticons/Worry.png"],
     "surprise": [5, "./static/assets/emoticons/Surprise.png"],
     "love": [6, "./static/assets/emoticons/Love.png"],
-    "fum": [7, "./static/assets/emoticons/fun.png"],
+    "fun": [7, "./static/assets/emoticons/fun.png"],
     "hate": [8, "./static/assets/emoticons/hate.png"],
     "happiness": [9, "./static/assets/emoticons/happiness.png"],
     "boredom": [10, "./static/assets/emoticons/boredom.png"],
