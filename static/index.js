@@ -1,5 +1,5 @@
 var date = new Date()
-let display_date= "Data:" + date.toLocaleDateString()
+let display_date= "Data: " + date.toLocaleDateString("pt-BR",{weekday:"short",year:"numeric", month:"short",day:"numeric"})
 
 $(document).ready(function () {
     $("#display_date").html(display_date)

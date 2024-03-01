@@ -40,7 +40,7 @@ def save_entry():
     emotion = request.json.get("emotion")
 
     entry = date + "," + save_text + "," + emotion+ ","
-    file_handler = open('./static/assets/datafiles/data_entry.csv' , 'a')
+    file_handler = open('./static/assets/data_files/data_entry.csv' , 'a')
     file_handler.write(entry + '\n')
     
     return jsonify("Success")

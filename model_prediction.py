@@ -7,19 +7,19 @@ from tensorflow.keras.models import load_model
 from datetime import datetime
 # Faça um dicionário de códigos e URLs para as diferentes emoções
 emo_code_url = {
-    "vazio": [0, "./static/assets/emoticons/Empty.png"],
-    "tristeza": [1,"./static/assets/emoticons/Sadness.png" ],
-    "entusiasmo": [2, "./static/assets/emoticons/Enthusiasm.png"],
-    "neutro": [3, "./static/assets/emoticons/Neutral.png"],
-    "preocupacao": [4, "./static/assets/emoticons/Worry.png"],
-    "surpresa": [5, "./static/assets/emoticons/Surprise.png"],
-    "amor": [6, "./static/assets/emoticons/Love.png"],
-    "diversao": [7, "./static/assets/emoticons/fun.png"],
-    "odio": [8, "./static/assets/emoticons/hate.png"],
-    "felicidade": [9, "./static/assets/emoticons/happiness.png"],
-    "tedio": [10, "./static/assets/emoticons/boredom.png"],
-    "alivio": [11, "./static/assets/emoticons/relief.png"],
-    "raiva": [12, "./static/assets/emoticons/anger.png"],
+    "empty": [0, "./static/assets/emoticons/Empty.png"],
+    "sadness": [1,"./static/assets/emoticons/Sadness.png" ],
+    "enthusiastic": [2, "./static/assets/emoticons/Enthusiastic.png"],
+    "neutral": [3, "./static/assets/emoticons/Neutral.png"],
+    "worry": [4, "./static/assets/emoticons/Worry.png"],
+    "surprise": [5, "./static/assets/emoticons/Surprise.png"],
+    "love": [6, "./static/assets/emoticons/Love.png"],
+    "fum": [7, "./static/assets/emoticons/fun.png"],
+    "hate": [8, "./static/assets/emoticons/hate.png"],
+    "happiness": [9, "./static/assets/emoticons/happiness.png"],
+    "boredom": [10, "./static/assets/emoticons/boredom.png"],
+    "relief": [11, "./static/assets/emoticons/relief.png"],
+    "anger": [12, "./static/assets/emoticons/anger.png"],
 }
 
 train_data = pd.read_csv("./static/assets/data_files/tweet_emotions.csv")    
@@ -41,7 +41,7 @@ tokenizer = Tokenizer(num_words=vocab_size, oov_token=oov_tok)
 tokenizer.fit_on_texts(training_sentences)
 
 def predict(text):
-    predicted_emotion_img_url=""
+    predicted_emoji=""
     predicted_emotion=""
 
     if  text!="":
@@ -59,9 +59,9 @@ def predict(text):
             
         for key, value in emo_code_url.items():
             if value[0]==predicted_class_label:
-                predicted_emotion_img_url=value[1]
+                predicted_emoji=value[1]
                 predicted_emotion=key
-        return predicted_emotion, predicted_emotion_img_url
+        return predicted_emotion, predicted_emoji
 
 #Exiba a entrada
 def show_entry():
